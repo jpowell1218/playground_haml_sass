@@ -1,0 +1,23 @@
+- @my_class = "current"
+- @my_array = [1,2,3]
+!!! Strict
+%html
+  %head
+    %link{:rel=>"stylesheet", :href=>"/stylesheets/blueprint/screen.css", :type=>"text/css", :media=>"screen, projection"}
+    %script{:type=>"text/javascript", :src=>"/javascripts/prototype.js"}
+    
+  %body
+    %h1 Hello World
+      
+    %img{:src => "logo.png"}/
+    
+    #header.span-1.last
+      %ul
+        %li 
+          Butter
+          - @my_array.each do |item|
+            %a{:href => "http://peepcode.com", :class => @my_class, :id => item} 
+              PeepCode
+              -# render(:partial => "form")
+        %li
+          Cheese

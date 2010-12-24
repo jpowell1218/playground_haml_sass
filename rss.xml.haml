@@ -1,0 +1,17 @@
+!!! XML
+%rss{"version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/", "xmlns:trackback" => "http://madskills.com/public/xml/rss/module/trackback/"}
+  %channel
+    %title= "Tweets"
+    %link= "http://localhost:4000"
+    %language= "en-us"
+    %ttl= "40"
+    %description= "Tweets"
+
+    - @tweets.each do |tweet|
+      %item
+        %title= item.text
+        %description= item.text
+        %pubDate= item.created_at
+        %guid{"isPermaLink" => "false"}
+          = item.id
+
